@@ -7,6 +7,7 @@ create table contact
     message  varchar(40),
     phone_number varchar(60),
         primary key (id)
+
 );
 # use fistdatabase;
 # create table contact

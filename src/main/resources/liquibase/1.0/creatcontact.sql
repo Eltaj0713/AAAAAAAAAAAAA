@@ -13,6 +13,7 @@ create table contact
 # create table contact
 # (
 #     id    int auto_increment,
+
 #     fullName varchar(50)  not null,
 #     email  varchar(40) not null,
 #     message  varchar(40) not null,

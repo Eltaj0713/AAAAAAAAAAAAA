@@ -1,6 +1,7 @@
 package com.example.demoexample.Dao.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 //@SuppressWarnings("All")
 //@Getter
@@ -8,13 +9,14 @@ import jakarta.persistence.*;
 //@ToString
 //@RequiredArgsConstructor
 @Entity
+@Data
 @Table(name = "contact")
 //@AllArgsConstructor
 //@NoArgsConstructor
-public class ContactEntity{
+public class ContactEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+//    @Column(name = "id")
     private Integer id;
     @Column(name = "full_name")
 //    @Transient

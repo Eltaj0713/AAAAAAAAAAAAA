@@ -1,5 +1,5 @@
 package com.example.demoexample.Services;
-import com.example.demoexample.Dao.entity.ContactEntity;
+import com.example.demoexample.Dao.entity.AboutEntity;
 import com.example.demoexample.Dao.repository.AboutRepository;
 import com.example.demoexample.Mapper.AboutMapper;
 import com.example.demoexample.Model.AboutDto;
@@ -18,9 +18,10 @@ public class AboutService implements MethodService{
     }
     @Override
     public List<AboutDto> showAboutFindAll(){
-        var aboutEntityList=aboutRepository.findAll();
-        return aboutEntityList.parallelStream()
+        List<AboutEntity> aboutEntityList=aboutRepository.findAll();
+        var aboutDtoList = aboutEntityList.parallelStream()
                 .map(AboutMapper.INSTANCE::mapToDtoAbout)
                 .toList();
+        return aboutDtoList;
     }
 }

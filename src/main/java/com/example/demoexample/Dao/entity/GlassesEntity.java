@@ -1,7 +1,7 @@
 package com.example.demoexample.Dao.entity;
 import jakarta.persistence.*;
 import lombok.*;
-@SuppressWarnings("ALL")
+//@SuppressWarnings("ALL")
 @Entity
 @Table(name = "products")
 @Data

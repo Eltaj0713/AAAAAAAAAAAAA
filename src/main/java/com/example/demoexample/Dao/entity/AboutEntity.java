@@ -1,20 +1,27 @@
 package com.example.demoexample.Dao.entity;
-import jakarta.persistence.*;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-@SuppressWarnings("ALL")
+
+
 @Entity
 @Data
-@Table(name = "about")
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "about")
 public class AboutEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private Integer id;
     @Column(name = "title")
     private String title;
     @Column(name = "text")
     private String text;
+
+
 }

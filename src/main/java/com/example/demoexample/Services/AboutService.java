@@ -1,9 +1,9 @@
 package com.example.demoexample.Services;
-import com.example.demoexample.Dao.entity.AboutEntity;
 import com.example.demoexample.Dao.repository.AboutRepository;
 import com.example.demoexample.Mapper.AboutMapper;
 import com.example.demoexample.Model.AboutDto;
 import com.example.demoexample.Model.GlassesDto;
+
 import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
@@ -16,12 +16,21 @@ public class AboutService implements MethodService{
     public List<GlassesDto> showFindAll(){
         return null;
     }
+
     @Override
-    public List<AboutDto> showAboutFindAll(){
-        List<AboutEntity> aboutEntityList=aboutRepository.findAll();
-        var aboutDtoList = aboutEntityList.parallelStream()
+    public List<AboutDto> showAboutFindAll() {
+        var  aboutEntityList = aboutRepository.findAll();
+        var aboutDtoList=aboutEntityList.parallelStream()
                 .map(AboutMapper.INSTANCE::mapToDtoAbout)
                 .toList();
         return aboutDtoList;
     }
+//    @Override
+//    public List<AboutDto> showAboutFindAll(){
+//        var aboutEntityList= aboutRepository.findAll();
+//        var aboutDtoList =aboutEntityList.parallelStream()
+//                .map(AboutMapper.INSTANCE::mapToDtoAbout)
+//                .toList();
+//        return aboutDtoList;
+//    }
 }
